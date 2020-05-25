@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contribuyentes</title>
+</head>
+<body>
+<table>
+    <thead>
+    <th>ID</th>
+    <th>NOMBRE</th>
+    <th>APELLIDO</th>
+    <th>NIT</th>
+    <th>FECHA</th>
+    <th>IMPORTANCIA</th>
+    </thead>
+    <th:block th:each="item, row: ${contribuyentes}">
+        <tr>
+            <th th:text="${item.id_contribuyente}"></th>
+            <th th:text="${item.nombre}"></th>
+            <th th:text="${item.apellido}"></th>
+            <th th:text="${item.nit}"></th>
+            <th th:text="${item.fIngreso}"></th>
+            <th th:text="${item.importancia.s_importancia}"></th>
+        </tr>
+    </th:block>
+</table>
+<br>
+<form th:action="@{/inicio}">
+    <input type="submit" value="Regresar"/>
+</form>
+
+</body>
+</html>
